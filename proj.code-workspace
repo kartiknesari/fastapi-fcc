@@ -1,0 +1,29 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "editor.tabSize": 4,
+        "python.defaultInterpreterPath": ".\\myvenv\\Scripts\\python.exe",
+        "terminal.integrated.profiles.windows": {
+            "PowerShell": {
+                "source": "PowerShell",
+                "icon": "terminal-powershell",
+                "args": ["-NoExit", "-Command", "& {Invoke-expression -Command \".\\myvenv\\Scripts\\activate.ps1\"}"]
+            },
+            "Command Prompt": {
+                "path": [
+                    "${env:windir}\\Sysnative\\cmd.exe",
+                    "${env:windir}\\System32\\cmd.exe"
+                ],
+                "args": ["/K"],
+                "icon": "terminal-cmd"
+            },
+            "Git Bash": {
+                "source": "Git Bash"
+            }
+        }
+    }
+}

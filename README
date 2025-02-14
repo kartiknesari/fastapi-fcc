@@ -1,0 +1,31 @@
+Steps
+
+1. Creat 'posts' paths without db and use pydantic models for request/response parameter type
+
+   1. Start by basic @get paths for post
+   2. Continue with basic @post paths for post
+   3. Follow using @put/@patch and @delete
+
+2. Add db using sqlalchemy
+
+   1. Find url for db. For postgres, it is: 'postgresql://<username>:<password>@<ip-address/hostname>/<database name>'
+   2. Start by creating a db engine using create_engine()
+   3. Create a session using sessionMaker(engine) which creates an object of class Session. Let variable be SessionLocal
+   4. Your database is created by called the Session object sessionLocal()
+   5. yeild it to make the method a generator function which allows for yield and Depends
+
+3. Create '/users' paths, redo '/posts' CRUD methods using db
+
+   1. Use db connectivity to create paths for creating and fetching users
+   2. Redo '/posts' methods using db
+   3. Use hashes of password to store in db for safety reasons
+
+4. Authenticate using JWT
+
+   How JWT Works
+
+   1. User tries to login using username/email and password
+   2. Server verifies info and generates a signature (JWT token) comprising of a number of user-fields and a secret-key
+   3. User requests paths for info and uses signature for verification
+   4. API endpoint authenticates using the user-fields and secret-key only API server has.
+   5. If equal, access granted else no
