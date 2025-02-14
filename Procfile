@@ -1,0 +1,1 @@
+web: fastapi dev apps/main.py
